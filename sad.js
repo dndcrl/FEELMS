@@ -32,7 +32,7 @@ const API_URL = `https://api.themoviedb.org/4/list/${LIST_ID}?api_key=${API_KEY}
 const swiperWrapper = document.querySelector('.swiper-wrapper');
 const movieInfo = document.querySelector('.movieinfo');
 
-let movies = []; 
+let movies = [];
 
 
 function shuffleArray(array) {
@@ -52,8 +52,7 @@ async function fetchMovies() {
             return;
         }
 
-        movies = data.results; 
-
+        movies = data.results;
         shuffleArray(movies);
 
         movies.forEach((movie) => {
@@ -73,8 +72,6 @@ async function fetchMovies() {
         });
 
         swiper.update();
-        
-
         updateMovieInfo(0);
 
     } catch (error) {
@@ -82,7 +79,6 @@ async function fetchMovies() {
     }
 }
 
-// director of a movie
 async function fetchDirector(movieId) {
     const creditsUrl = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${API_KEY}`;
 
@@ -102,17 +98,57 @@ async function fetchDirector(movieId) {
     }
 }
 
-// rating, description, and director
+
+async function fetchWatchProviders(movieId) {
+    const region = "US"
+    const watchUrl = `https://api.themoviedb.org/3/movie/${movieId}/watch/providers?api_key=${API_KEY}`;
+
+    try {
+        const response = await fetch(watchUrl);
+        const data = await response.json();
+
+        if (data.results && data.results[region] && data.results[region].flatrate) {
+            return data.results[region].flatrate.map(provider => ({
+                name: provider.provider_name,
+                logo: `https://image.tmdb.org/t/p/w92${provider.logo_path}`
+            }));
+        }
+
+        return [];
+    } catch (error) {
+        console.error("Error fetching watch providers:", error);
+        return [];
+    }
+}
+
+
 async function updateMovieInfo(index) {
     if (movies.length > 0 && movies[index]) {
         const selectedMovie = movies[index];
-        const rating = selectedMovie.vote_average ? selectedMovie.vote_average.toFixed(1) : "N/A"; 
-        const director = await fetchDirector(selectedMovie.id); 
+        const rating = selectedMovie.vote_average ? selectedMovie.vote_average.toFixed(1) : "N/A";
+        const director = await fetchDirector(selectedMovie.id);
+        const watchProviders = await fetchWatchProviders(selectedMovie.id);
+
+        let watchProvidersHTML = `<p><strong>Where to Watch (Streaming Services in US Region):</strong> Not available</p>`;
+
+        if (watchProviders.length > 0) {
+            watchProvidersHTML = `
+                <p><strong>Where to Watch (Streaming Services in US Region):</strong></p>
+                <div class="watch-providers">
+                    ${watchProviders.map(provider => `
+                        <div class="provider">
+                            <img src="${provider.logo}" alt="${provider.name}" title="${provider.name}">
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
 
         movieInfo.innerHTML = `
             <p><strong>Rating:</strong> ⭐ ${rating}/10</p>
-            <p><strong>Director:</strong> 🎬 ${director}</p>
+            <p><strong>Director:</strong>  ${director}</p>
             <p>${selectedMovie.overview || "No description available."}</p>
+            ${watchProvidersHTML}
         `;
     }
 }

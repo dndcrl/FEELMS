@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOODVIE - home</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <section>
+        <div class="header">
+            <h1>MOODVIE</h1>
+            <p>movies by mood</p>
+        </div>
+
+        <div class="dropdown">
+            <select id="menu" onchange="changeContent()">
+                <option value="about">About</option>
+                <option value="request">Request</option>
+                <option value="changelogs">Changelogs</option>
+                <option value="acknowledgements">Acknowledgements</option>
+            </select>
+        </div>
+
+        <div class="content" id="content">
+            <p>Welcome to MOODVIE!</p>
+        </div>
+    </section>
+
+    <script src="home.js"></script>
+</body>
+</html>

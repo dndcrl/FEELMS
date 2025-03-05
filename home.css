@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap');
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(1000deg, #01020E, #1C1C3A);
+}
+
+section {
+    background-color: #d7d5e0;
+    width: 50em;
+    height: 50em;
+    border-radius: 5%;
+}
+
+.header {
+    text-align: center;
+    line-height: 0;
+    padding: 5em;
+}
+
+
+.header h1 {
+    color: #1C1C3A;
+    font-family: 'Oswald';
+    font-size: 5em;
+}
+
+.header p {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.dropdown {
+    margin: 20px 0;
+}
+
+select {
+    padding: 10px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    font-family: 'Quattrocento';
+    font-weight: bold;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.content h2 {
+    font-family: 'Oswald';
+    font-size: 2.4em;
+}
+
+.content p {
+    margin: auto 0;
+    font-family: 'Quattrocento';
+    text-align: center;
+    display: block;
+    font-size: 1.2em;
+    font-weight: 550;
+    max-width: 30em;
+}
