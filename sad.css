@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap');
+
+body {
+    text-align: center;
+    background: linear-gradient(135deg, #01020E, #1C1C3A);
+    color: white;
+    font-family: 'Quattrocento';
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    margin-top: 7em;
+}
+
+header {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.3em;
+    opacity: 0.8;
+    max-width: 50em;
+    text-align: center;
+}
+
+
+.swiper-container {
+    width: 90%;
+    max-width: 400px;
+    height: 500px;
+    position: relative;
+    margin: 30px auto;
+}
+
+
+.card {
+    width: 320px;
+    height: 460px;
+    background: #222;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(255, 255, 255, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.card h2 {
+    margin: 12px;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.swiper-slide-active {
+    transform: scale(1);
+}
+
+
+.swiper-button-prev, .swiper-button-next {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.swiper-button-prev:hover, .swiper-button-next:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+    background: rgba(0, 0, 0, 0.5) !important; 
+    filter: blur(20px); 
+    opacity: 0.5; 
+}
+
+.movieinfo {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.movie {
+    margin: 0;
+    padding: 0;
+}
+
+.movieinfo p {
+    font-size: 1.6em;
+}
+
