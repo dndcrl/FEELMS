@@ -150,4 +150,77 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em;
+    }
 
+    p {
+        font-size: 1em;
+        max-width: 90%;
+    }
+
+    .swiper-container {
+        width: 95%;
+        height: 400px;
+    }
+
+    .card {
+        width: 250px;
+        height: 400px;
+    }
+
+    .card h2 {
+        font-size: 1.5em;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        width: 40px;
+        height: 40px;
+    }
+
+    .movieinfo p {
+        font-size: 1em;
+    }
+
+    .provider img {
+        width: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.3em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    .swiper-container {
+        width: 100%;
+        height: 350px;
+    }
+
+    .card {
+        width: 220px;
+        height: 380px;
+    }
+
+    .card h2 {
+        font-size: 1.3em;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        width: 35px;
+        height: 35px;
+    }
+
+    .movieinfo p {
+        font-size: 0.9em;
+    }
+
+    .provider img {
+        width: 35px;
+    }
+}

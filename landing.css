@@ -82,3 +82,77 @@ button {
 button:hover {
     background-color: #1C1C3A; 
 }
+
+@media (max-width: 768px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header {
+        margin-bottom: 20px;
+        margin-right: 1em;
+    }
+
+    .header h1 {
+        font-size: 1.5em;
+    }
+
+    .header p {
+        font-size: 0.5em;
+    }
+
+    .main {
+        padding: 20px;
+        width: 80%;
+    }
+
+    .main h2 {
+        font-size: 1em;
+    }
+
+    select {
+        font-size: 0.7em;
+        width: 100%;
+        padding: 8px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width: 480px) {
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header h1 {
+        font-size: 1.5em;
+    }
+
+    .header p {
+        font-size: 0.5em;
+    }
+
+    .main {
+        padding: 15px;
+        width: 50%;
+    }
+
+    select {
+        font-size: 0.7em;
+        padding: 8px;
+    }
+
+    button {
+        margin-top: 5px;
+        width: 100%;
+        font-size: 0.7em;
+        padding: 8px;
+    }
+}
