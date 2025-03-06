@@ -151,6 +151,10 @@ body::-webkit-scrollbar {
 
 @media (max-width: 768px) {
 
+    section {
+        margin-top: 3em;
+    }
+
     h1 {
         font-size: 1.5em;
     }
