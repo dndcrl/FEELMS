@@ -149,3 +149,90 @@ select {
     color: #555;
     box-shadow: none;
 }
+
+@media (max-width: 768px) {
+    body {
+        height: auto;
+        padding: 20px;
+    }
+
+    section {
+        width: 95%;
+        max-width: 30em;
+        padding: 1.5em;
+        border-radius: 10px;
+    }
+
+    .header {
+        padding: 1em;
+    }
+
+    .header h1 {
+        font-size: 2.5em;
+    }
+
+    .header p {
+        font-size: 1em;
+    }
+
+    select {
+        font-size: 1em;
+        width: 100%;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    .content h2 {
+        font-size: 1.5em;
+    }
+
+    .content p {
+        font-size: 1em;
+    }
+
+    #content {
+        max-height: 250px;
+        padding: 10px;
+    }
+
+    #content h2 {
+        font-size: 1.2em;
+    }
+
+    #content ul li {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .header p {
+        font-size: 0.9em;
+    }
+
+    .content h2 {
+        font-size: 1.3em;
+    }
+
+    .content p {
+        font-size: 0.9em;
+    }
+
+    select {
+        font-size: 0.9em;
+    }
+
+    #content {
+        max-height: 200px;
+    }
+
+    #content h2 {
+        font-size: 1.1em;
+    }
+}
