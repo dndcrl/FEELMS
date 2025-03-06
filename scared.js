@@ -1,3 +1,5 @@
+document.body.style.overflow = "hidden";
+
 const swiper = new Swiper('.swiper-container', {
     direction: 'horizontal',
     rtl: false,
