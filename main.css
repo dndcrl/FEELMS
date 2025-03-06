@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap');
 
 body {
-    height: 250vh;
     text-align: center;
     background: linear-gradient(135deg, #01020E, #1C1C3A);
     color: white;
@@ -151,6 +150,7 @@ body::-webkit-scrollbar {
 }
 
 @media (max-width: 768px) {
+
     h1 {
         font-size: 1.5em;
     }
