@@ -168,7 +168,7 @@ body::-webkit-scrollbar {
 
 @media (max-width: 768px) {
     body {
-        height: 130vh;
+        height: 180vh;
     }
 
     section {
@@ -213,6 +213,9 @@ body::-webkit-scrollbar {
 }
 
 @media (max-width: 480px) {
+    body {
+        height: 180vh;
+    }
 
     h1 {
         font-size: 1.3em;
