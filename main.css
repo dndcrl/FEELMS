@@ -251,4 +251,8 @@ body::-webkit-scrollbar {
     .provider img {
         width: 35px;
     }
+
+    label, select {
+        font-size: 1em;
+    }
 }
