@@ -10,6 +10,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto; 
     scrollbar-width: none;
+    height: 110vh;
 }
 
 section {
@@ -143,6 +144,22 @@ p {
 
 .provider img:hover {
     transform: scale(1.1); 
+}
+
+label {
+    font-size: 1.2em;
+}
+
+select {
+    padding: 5px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    font-family: 'Quattrocento';
+    font-weight: bold;
 }
 
 body::-webkit-scrollbar {

@@ -1,5 +1,3 @@
-
-
 const swiper = new Swiper('.swiper-container', {
     direction: 'horizontal',
     rtl: false,
@@ -101,8 +99,7 @@ async function fetchDirector(movieId) {
 }
 
 
-async function fetchWatchProviders(movieId) {
-    const region = "US"
+async function fetchWatchProviders(movieId, region) {
     const watchUrl = `https://api.themoviedb.org/3/movie/${movieId}/watch/providers?api_key=${API_KEY}`;
 
     try {
@@ -124,18 +121,20 @@ async function fetchWatchProviders(movieId) {
 }
 
 
+
 async function updateMovieInfo(index) {
     if (movies.length > 0 && movies[index]) {
         const selectedMovie = movies[index];
         const rating = selectedMovie.vote_average ? selectedMovie.vote_average.toFixed(1) : "N/A";
         const director = await fetchDirector(selectedMovie.id);
-        const watchProviders = await fetchWatchProviders(selectedMovie.id);
+        const selectedRegion = document.getElementById("region").value;
+        const watchProviders = await fetchWatchProviders(selectedMovie.id, selectedRegion);
 
-        let watchProvidersHTML = `<p><strong>Where to Watch (Streaming Services in US Region):</strong> Not available</p>`;
+        let watchProvidersHTML = `<p><strong>Where to Watch (Streaming Services in ${selectedRegion}):</strong> Not available</p>`;
 
         if (watchProviders.length > 0) {
             watchProvidersHTML = `
-                <p><strong>Where to Watch (Streaming Services in US Region):</strong></p>
+                <p><strong>Where to Watch (Streaming Services in ${selectedRegion}):</strong></p>
                 <div class="watch-providers">
                     ${watchProviders.map(provider => `
                         <div class="provider">
@@ -154,5 +153,9 @@ async function updateMovieInfo(index) {
         `;
     }
 }
+
+document.getElementById("region").addEventListener("change", () => {
+    updateMovieInfo(swiper.realIndex);
+});
 
 fetchMovies();
