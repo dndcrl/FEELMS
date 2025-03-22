@@ -10,7 +10,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto; 
     scrollbar-width: none;
-    height: 110vh;
+    height: 115vh;
 }
 
 section {
@@ -167,6 +167,9 @@ body::-webkit-scrollbar {
 }
 
 @media (max-width: 768px) {
+    body {
+        height: 130vh;
+    }
 
     section {
         margin-top: 3em;
@@ -210,6 +213,7 @@ body::-webkit-scrollbar {
 }
 
 @media (max-width: 480px) {
+
     h1 {
         font-size: 1.3em;
     }
