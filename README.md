@@ -14,13 +14,9 @@
 - 🎨 Clean user interface with a focus on UX
 - 📱 Responsive design for both desktop and mobile devices
 
-- <hr>
-
 ## 🚀 Live Demo
 
 Check out the live version: [feelms.netlify.app](https://feelms.netlify.app/)  
-
-<hr>
 
 ## 🛠️ Built With
 
